@@ -1,0 +1,15 @@
+def application(environ, start_response):
+    start_response('200 OK', [('Content-Type', 'text/html;charset=utf-8')])
+
+    file_name = environ['url']
+
+    if file_name == "/index.py":
+        return "index.py is show"
+    elif file_name == "/center.py":
+        return "center.py is show"
+    elif file_name == "/login.py":
+        return "我登录!"
+    else:
+        return "not page is find!"
+
+    return 'wsgi data is show'
